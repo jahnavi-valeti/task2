@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="applicantForm" onsubmit="return validateForm()">
+        <h1>Job Application Form</h1>
+        
+        <label for="firstName">First Name *</label>
+        <input type="text" id="firstName" name="first_name" required>
+
+        <label for="lastName">Last Name *</label>
+        <input type="text" id="lastName" name="last_name" required>
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number *</label>
+        <input type="text" id="phone" name="phone_num" required>
+
+        <label for="address">Address *</label>
+        <input type="text" id="address" name="address" required>
+
+        <label for="city">City *</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="state">State *</label>
+        <input type="text" id="state" name="state" required>
+
+        <label for="zip">Zip Code *</label>
+        <input type="number" id="zip" name="zip" required>
+
+        <label for="country">Country *</label>
+        <select id="country" name="country_cd" required>
+            <option value="">Select...</option>
+            <!-- Add country options here -->
+        </select>
+
+        <label for="educationLevel">Education Level *</label>
+        <select id="educationLevel" name="edu_level_cd" required>
+            <option value="">Select...</option>
+            <!-- Add education level options here -->
+        </select>
+
+        <label for="educationType">Education Type *</label>
+        <select id="educationType" name="edu_type_cd" required>
+            <option value="">Select...</option>
+            <!-- Add education type options here -->
+        </select>
+
+        <label for="resume">Resume *</label>
+        <input type="file" id="resume" name="resume_file_name" accept=".pdf,.doc,.docx" required>
+
+        <label for="coverLetter">Cover Letter (optional)</label>
+        <textarea id="coverLetter" name="cover_letter_text"></textarea>
+
+        <label for="employed">Are you employed?</label>
+        <input type="checkbox" id="employed" name="employed_flag" onclick="toggleEmployerFields()">
+
+        <div id="employerFields" style="display:none;">
+            <label for="currentEmployer">Current Employer</label>
+            <input type="text" id="currentEmployer" name="current_employer_name">
+
+            <label for="yearsOfExperience">Years of Experience</label>
+            <input type="number" id="yearsOfExperience" name="years_of_exp" min="0">
+        </div>
+
+        <label for="jobsApplied">Jobs You Want to Apply *</label>
+        <select id="jobsApplied" name="jobs_applied" multiple required>
+            <!-- Add job options here -->
+        </select>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script src="validation.js"></script>
+</body>
+</html>
